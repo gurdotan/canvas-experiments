@@ -74,6 +74,8 @@ $(function() {
         bitmap = new Bitmap(sprite);
         bitmap.x = 0;
         bitmap.y = 0;
+        bitmap.bounds = 30;
+        bitmap.hit = bitmap.bounds;
 
         stage.addChild(bitmap);
         coin = new Coin();
@@ -118,6 +120,10 @@ $(function() {
         // update the stage:
         stage.update();
         coin.tick();
+
+        if (coin.hitRadius(bitmap.x, bitmap.y, bitmap.hit)) {
+            console.log("la");
+        }
     };
 
     // a flag for passing data between touchmove and touchend
