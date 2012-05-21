@@ -1,3 +1,7 @@
+html, body, #main, #sliding-frame , #item-group{
+    height: 100%;
+}
+
 img.bg {
     /* Set rules to fill background */
     min-height: 100%;
@@ -118,3 +122,62 @@ header > *:last-child {
 	box-pack: start;
 	box-align: stretch;
 }
+
+
+@media screen and (max-width: 480px) {
+
+    header .store-title {
+        display: none;
+    }
+
+    #item-group {
+        display: block;
+        padding: 20px;
+        height: 100%;
+    }
+    .item:first-child {
+        border-radius: 10px 10px 0 0;
+    }
+    .item:last-child {
+        border-radius: 0 0 10px 10px;
+    }
+    .item {
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+        position: relative;
+        box-shadow: 0 0 6px black;
+    }
+    .item h2 {
+        position: absolute;
+        left: 70px;
+    }
+    .item img.thumbnail {
+        float: left;
+        max-height: 50px;
+    }
+    .item div{
+        position: absolute;
+        left: 70px;
+        top: 25px;
+        text-align: left;
+    }
+    .item h3{
+        position: absolute;
+        right: 10px;
+        top: 43px;
+        text-align: right;
+    }
+    .item:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+}
+

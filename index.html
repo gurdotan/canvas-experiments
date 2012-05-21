@@ -54,14 +54,13 @@
             <img src="img/island/Coins-small.png" height="25">
             <span style="margin-left: 5px">256 left</span>
         </div>
-        <div style="text-align: center; font-family: 'Lilita One', cursive">
+        <div class="store-title" style="text-align: center; font-family: 'Lilita One', cursive">
             <h2>Gecko Island Store</h2>
         </div>
         <div>
             <span id="buy-more">Buy more coins</span>
         </div>
     </header>
-  <div id="container">
     <div id="main" role="main">
         <div id="sliding-frame">
             <div id="item-group"></div>
@@ -71,14 +70,13 @@
     <footer>
 
     </footer>
-  </div> <!--! end of #container -->
 
 
   <!-- JavaScript templates -->
     <script id="item-template" type="text/x-handlebars-template">
         <h2>{{title}}</h2>
         <img src="/jamp/img/island/items/{{img}}" class="thumbnail">
-        <div style="font-size: 0.8em; font-weight: bold; text-align: center; margin: 2px 0;">{{description}}</div>
+        <div style="font-size: 0.8em; font-weight: bold; margin: 2px 0;">{{description}}</div>
         <h3><img src="img/island/Coins-small.png" height="15"><span style="margin-left: 5px;">{{price}} coins</span></h3>
     </script>
 
