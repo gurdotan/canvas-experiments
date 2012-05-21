@@ -8,6 +8,7 @@ $(function() {
     var coin;
 
     var sprite = new Image();
+    var wallpaper = new Image();
 
     function init() {
 
@@ -16,6 +17,11 @@ $(function() {
         sprite.onload = handleImageLoad;
         sprite.onerror = handleImageError;
         sprite.src = "img/squirrel-sprite.png";
+
+        // Define wallpaper
+        wallpaper.src = "img/wallpaper1.jpg";
+        wallpaper.style.width = screen.width;
+        wallpaper.style.height = screen.height;
     }
 
     function reset() {
@@ -39,8 +45,15 @@ $(function() {
         bitmap.bounds = 30;
         bitmap.hit = bitmap.bounds;
 
-        stage.addChild(bitmap);
+        // First add a background
+        var background = new Bitmap(wallpaper);
+        background.scaleX = screen.width / wallpaper.width;
+        background.scaleY = screen.width / wallpaper.height;
+        stage.addChild(background);
+
+        // Then add other elements
         coin = new Coin();
+        stage.addChild(bitmap);
         stage.addChild(coin);
 
         // we want to do some work before we update the canvas,
