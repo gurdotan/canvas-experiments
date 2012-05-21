@@ -16,7 +16,7 @@
             this.y = 0;
             this.direction = -90;
         },
-        delta : screen.width / (3 * 60),  // 3 seconds @ 60fps
+        delta : screen.width / (3 * 30),  // 3 seconds @ 60fps
         hit : 0,
         hitPoint : function (tX, tY) {
             return this.hitRadius(tX, tY, 0);

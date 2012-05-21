@@ -60,7 +60,7 @@ $(function() {
         // otherwise we could use Ticker.addListener(stage);
         Ticker.addListener(window);
         Ticker.useRAF = true;
-        Ticker.setFPS(60);
+        Ticker.setFPS(30);
     }
 
     //called if there is an error loading the image (usually due to a 404)
