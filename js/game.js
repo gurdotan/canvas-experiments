@@ -29,7 +29,7 @@ function startGame() {
 //    canvas.addEventListener("touchstart", function(){alert("touch started");}, false);
 //    $(canvas).on("touchstart", function(){alert("touch started");});
 //    $(canvas).on("touchend", function(){alert("touch end");});
-    $(canvas).on("touchmove", function(){alert("touch move");});
+//    $(canvas).on("touchmove", function(){alert("touch move");});
 
 	// grab canvas width and height for later calculations:
 	screen_width = canvas.width;
