@@ -1,6 +1,7 @@
 $(function() {
 
     var canvas = document.getElementById("playground");
+    $(canvas).attr({width : screen.width, height: screen.height});
     var stage;
     var screen_width;
     var screen_height;
@@ -91,24 +92,24 @@ $(function() {
     window.tick = function() {
 
         // Hit testing the screen width, otherwise our bitmap would disappear
-        if (bitmap.x >= screen_width - sprite.width) {
+        if (bitmap.y >= screen_height - sprite.height) {
             // We've reached the right side of our screen
             // We need to walk left now to go back to our initial position
-            bitmap.direction = -90;
+            bitmap.direction = 0;
         }
 
-        if (bitmap.x < 0) {
+        if (bitmap.y < 0) {
             // We've reached the left side of our screen
             // We need to walk right now
-            bitmap.direction = 90;
+            bitmap.direction = 180;
         }
 
         // Moving the bitmap based on the direction & the speed
-        if (bitmap.direction == 90) {
-            bitmap.x += 2;
+        if (bitmap.direction == 180) {
+            bitmap.y += 2;
         }
         else {
-            bitmap.x -= 2;
+            bitmap.y -= 2;
         }
 
         // update the stage:
@@ -127,7 +128,7 @@ $(function() {
 
                 if (!moved) {
                     // Place element where the finger is
-                    bitmap.direction = (touch.pageX > bitmap.x) ? 90 : -90
+                    bitmap.direction = (touch.pageY > bitmap.y) ? 180 : 0
                 } else {
                     // reset flag
                     moved = false;
@@ -138,15 +139,15 @@ $(function() {
             // If there's exactly one finger inside this element
             if (event.originalEvent.changedTouches.length == 1) {
                 var touch = event.originalEvent.changedTouches[0];
-                bitmap.x = touch.pageX;
+                bitmap.y = touch.pageY;
             }
             moved = true;
         },
         mousedown : function(event) {
-            bitmap.direction = (event.offsetX > bitmap.x) ? 90 : -90
+            bitmap.direction = (event.offsetY > bitmap.y) ? 180 : 0
 
             $(this).on("mousemove.canvas", function(event) {
-                bitmap.x = event.offsetX;
+                bitmap.y = event.offsetY;
             });
         },
         mouseup : function(event) {
@@ -157,10 +158,10 @@ $(function() {
     $(document).keydown(function(event) {
         switch (event.keyCode) {
             case 37:
-                bitmap.direction = -90;
+                bitmap.direction = 0;
                 break;
             case 39:
-                bitmap.direction = 90;
+                bitmap.direction = 180;
                 break;
         }
     });
