@@ -7,6 +7,7 @@ $(function() {
     var screen_height;
     var bmpAnimation;
     var bitmap;
+    var coin;
 
     var sprite = new Image();
 
@@ -75,6 +76,8 @@ $(function() {
         bitmap.y = 0;
 
         stage.addChild(bitmap);
+        coin = new Coin();
+        stage.addChild(coin);
 
         // we want to do some work before we update the canvas,
         // otherwise we could use Ticker.addListener(stage);
@@ -114,6 +117,7 @@ $(function() {
 
         // update the stage:
         stage.update();
+        coin.tick();
     };
 
     // a flag for passing data between touchmove and touchend
