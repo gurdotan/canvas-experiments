@@ -1,0 +1,52 @@
+img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    /*min-width: 1024px;*/
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1
+}
+
+#sliding-frame {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.item {
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    background: #f0dddd;
+    border: 1px solid;
+
+    /*-webkit-box-flex: 1;*/
+    /*-moz-box-flex: 1;*/
+    /*box-flex: 1;*/
+    width: 100px;
+
+}
+
+#item-group {
+    padding: 20px;
+    margin-left: 0;
+
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: start;
+	-webkit-box-align: stretch;
+	display: -moz-box;
+	-moz-box-orient: horizontal;
+	-moz-box-pack: start;
+	-moz-box-align: stretch;
+	display: box;
+	box-orient: horizontal;
+	box-pack: start;
+	box-align: stretch;
+}
