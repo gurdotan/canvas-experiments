@@ -39,6 +39,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Lilita+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/store.css">
 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -53,8 +54,11 @@
             <img src="img/island/Coins-small.png" height="25">
             <span style="margin-left: 5px">256 left</span>
         </div>
+        <div style="text-align: center; font-family: 'Lilita One', cursive">
+            <h2>Gecko Island Store</h2>
+        </div>
         <div>
-            Buy more coins
+            <span id="buy-more">Buy more coins</span>
         </div>
     </header>
   <div id="container">
@@ -73,9 +77,9 @@
   <!-- JavaScript templates -->
     <script id="item-template" type="text/x-handlebars-template">
         <h2>{{title}}</h2>
-        <img src="/jamp/img/island/items/{{img}}">
+        <img src="/jamp/img/island/items/{{img}}" class="thumbnail">
         <div style="font-size: 0.8em; font-weight: bold; text-align: center; margin: 2px 0;">{{description}}</div>
-        <h3>Price : {{price}}</h3>
+        <h3><img src="img/island/Coins-small.png" height="15"><span style="margin-left: 5px;">{{price}} coins</span></h3>
     </script>
 
 

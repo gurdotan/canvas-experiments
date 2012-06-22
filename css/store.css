@@ -49,6 +49,14 @@ header > *:last-child {
     text-align: right;
 }
 
+#buy-more {
+    background: #ffff99;
+    padding: 5px;
+    border-radius: 10px;
+    color: #A00000;
+    line-height: 25px;
+}
+
 #main {
     margin-top: 35px;
 }
@@ -82,7 +90,7 @@ header > *:last-child {
     font-size: 1.2em;
 }
 
-.item img {
+.item img.thumbnail {
     max-height: 80px;
     display: block;
     margin: 0 auto;
