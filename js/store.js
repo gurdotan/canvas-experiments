@@ -19,6 +19,7 @@ $(function() {
             this.collection.on("reset", this.render);
             this.currentTranslateX = 0;
         },
+/*
         events : {
             "touchstart" : function(event) {
                 if (event.originalEvent.targetTouches.length == 1) {
@@ -49,6 +50,7 @@ $(function() {
                 }
             }
         },
+*/
         render : function() {
             var $this = this;
             this.collection.each(function(item) {

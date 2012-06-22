@@ -16,7 +16,7 @@ img.bg {
 
 #sliding-frame {
     margin: 0 auto;
-    overflow: hidden;
+    overflow: scroll    ;
 }
 
 .item {
