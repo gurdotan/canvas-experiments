@@ -70,6 +70,15 @@
   </div> <!--! end of #container -->
 
 
+  <!-- JavaScript templates -->
+    <script id="item-template" type="text/x-handlebars-template">
+        <h2>{{title}}</h2>
+        <img src="/jamp/img/island/items/{{img}}">
+        <div style="font-size: 0.8em; font-weight: bold; text-align: center; margin: 2px 0;">{{description}}</div>
+        <h3>Price : {{price}}</h3>
+    </script>
+
+
   <!-- JavaScript at the bottom for fast page loading -->
 
 
@@ -81,6 +90,7 @@
 
   <script src="js/libs/underscore.js"></script>
   <script src="js/libs/backbone.js"></script>
+  <script src="js/libs/handlebars-1.0.0.beta.6.js"></script>
   <script src="js/store.js"></script>
 
 

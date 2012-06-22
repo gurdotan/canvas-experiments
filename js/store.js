@@ -1,5 +1,8 @@
 $(function() {
 
+    // JS templates
+    var itemTemplate = Handlebars.compile($("#item-template").html());
+
     // Define Backbone models
     var Item = Backbone.Model.extend({});
     var ItemCollection = Backbone.Collection.extend({
@@ -9,7 +12,12 @@ $(function() {
     var ItemView = Backbone.View.extend({
         className : "item",
         render : function() {
-            this.$el.html("<h1>" + this.model.get("title") + "</h1>" + "<h3>Price : " + this.model.get("price") + "</h3>");
+            var html = itemTemplate({   title: this.model.get("title"),
+                                        price : this.model.get("price"),
+                                        img : this.model.get("img"),
+                                        description : this.model.get("description")
+                                    });
+            this.$el.html(html);
             return this;
         }
     });
@@ -61,14 +69,15 @@ $(function() {
     })
 
     var items = [
-        {title : "Pink hat", price : "20.00$"},
-        {title : "Yellow hat", price : "15.00$"},
-        {title : "Red hat", price : "16.00$"},
-        {title : "Green hat", price : "19.00$"},
-        {title : "Pink hat", price : "20.00$"},
-        {title : "Yellow hat", price : "15.00$"},
-        {title : "Red hat", price : "16.00$"},
-        {title : "Green hat", price : "19.00$"}
+        {title : "Colombo", price : "20.00$", img : "colombo.jpg", description : "Build stamina on each critter you capture."},
+        {title : "Fireflower", price : "15.00$", img : "fireflower.jpg", description : "Shoot enemies with the powerful flower stinger."},
+        {title : "Gloo-Boy", price : "16.00$", img : "glooboy.png", description : "Get ultra sticky feet for climbing those high branches."},
+        {title : "Jimbakoo", price : "19.00$", img : "jimbakoo.jpg", description : "Transform yourself to another random gecko."},
+        {title : "VelociDude", price : "20.00$", img : "velocidude.jpg", description : "Run like the wind with speed bursts."},
+        {title : "Zeebster", price : "15.00$", img : "zeebster.jpg", description : "Hide from snakes when crawling in the bush."},
+        {title : "Forester", price : "16.00$", img : "forester.jpg", description : "Camouflage yourself in the wake of jungle enemies"},
+        {title : "Geckstock", price : "16.00$", img : "geckstock.jpg", description : "Sooth your enemies to sleep with a groovy sixties look."},
+        {title : "Tugalu", price : "16.00$", img : "tugalu.png", description : "Gain treetop elevation with huge jumps."}
     ];
 
     var itemCollection = new ItemCollection(items);

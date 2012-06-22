@@ -59,7 +59,7 @@ header > *:last-child {
 }
 
 .item {
-    padding: 20px;
+    padding: 5px 10px;
     margin: 20px;
     /*background: #f0dddd;*/
     background: rgba(0, 200, 200, 0.6);
@@ -68,9 +68,29 @@ header > *:last-child {
     /*-moz-box-flex: 1;*/
     /*box-flex: 1;*/
     width: 100px;
-    height: 100px;
+    height: 160px;
     box-shadow: 0 0 10px black;
     border-radius: 20px;
+}
+
+.item h2,h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.item h2 {
+    font-size: 1.2em;
+}
+
+.item img {
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
+    border: 1px gray solid;
+},
+
+.item description {
+    font-size: 0.7em;
 }
 
 #item-group {
